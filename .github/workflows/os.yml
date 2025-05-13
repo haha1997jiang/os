@@ -42,6 +42,8 @@ jobs:
 
       - name: Configuring SSH
         run: |
+          echo "$DEPLOY_KEY"
+          echo "${{secrets.DEPLOY_KEY}}"
           test -n "$DEPLOY_KEY"
           mkdir ~/.ssh
           chmod 700 ~/.ssh
